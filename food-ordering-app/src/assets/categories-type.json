@@ -1,0 +1,98 @@
+[
+  {
+    "id":0,
+    "name":"Rice Dishes",
+    "image":"https://d1gdsbnyhc9sug.cloudfront.net/wp-content/uploads/2017/05/iStock-516114090-e1496416211315.jpg?x61387",
+    "items":[
+      {
+        "id":0,
+        "name":"Plain Rice",
+        "price":"150"
+      },
+      {
+        "id":1,
+        "name":"Pulao Rice",
+        "price":"190"
+      },
+      {
+        "id":2,
+        "name":"Special Mix Rice",
+        "price":"225"
+      },
+      {
+        "id":3,
+        "name":"Vegetable Rice",
+        "price":"170"
+      },
+      {
+        "id":4,
+        "name":"Lemon Rice",
+        "price":"170"
+      }
+    ]
+  },
+  {
+    "id":1,
+    "name":"Biryani Dishes",
+    "image":"https://www.ticklingpalates.com/wp-content/uploads/2020/04/plain-biryani.jpg",
+    "items":[
+      {
+        "id":0,
+        "name":"Chicken Biryani",
+        "price":"240"
+      },
+      {
+        "id":1,
+        "name":"King Prwan Biryani",
+        "price":"165"
+      },
+      {
+        "id":2,
+        "name":"Prwan Biryani",
+        "price":"195"
+      },
+      {
+        "id":3,
+        "name":"Mushroom Biryani",
+        "price":"255"
+      },
+      {
+        "id":4,
+        "name":"Vegetable Biryani",
+        "price":"150"
+      }
+    ]
+  },
+  {
+    "id":2,
+    "name":"Indian Breads & Sundries",
+    "image":"https://static.toiimg.com/thumb/62915197.cms?width=573&height=430",
+    "items":[
+      {
+        "id":0,
+        "name":"Chapati",
+        "price":"7"
+      },
+      {
+        "id":1,
+        "name":"Paratha",
+        "price":"60"
+      },
+      {
+        "id":2,
+        "name":"Stuffed Paratha",
+        "price":"80"
+      },
+      {
+        "id":3,
+        "name":"Kulcha Nan",
+        "price":"55"
+      },
+      {
+        "id":4,
+        "name":"Garlic Nan",
+        "price":"70"
+      }
+    ]
+  }
+]
