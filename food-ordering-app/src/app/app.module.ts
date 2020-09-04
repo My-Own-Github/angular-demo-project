@@ -1,13 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import bootstrap from "bootstrap";
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { CategoriesListsComponent } from './components/categories-lists/categories-lists.component';
 import { ItemsListComponent } from './components/items-list/items-list.component';
 import { ShowCartComponent } from './components/show-cart/show-cart.component';
+import { CheckUserAuthService } from './service/check-user-auth.service';
+import { UserAuthGuard } from './user-auth.guard';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
+import { CartItemService } from './service/cart-item.service';
 
 @NgModule({
   declarations: [
@@ -15,13 +20,18 @@ import { ShowCartComponent } from './components/show-cart/show-cart.component';
     UserLoginComponent,
     CategoriesListsComponent,
     ItemsListComponent,
-    ShowCartComponent
+    ShowCartComponent,
+    HomePageComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CheckUserAuthService, UserAuthGuard, CartItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,27 +7,37 @@
       {
         "id":0,
         "name":"Plain Rice",
-        "price":"150"
+        "price":"150",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":1,
         "name":"Pulao Rice",
-        "price":"190"
+        "price":"190",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":2,
         "name":"Special Mix Rice",
-        "price":"225"
+        "price":"225",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":3,
         "name":"Vegetable Rice",
-        "price":"170"
+        "price":"170",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":4,
         "name":"Lemon Rice",
-        "price":"170"
+        "price":"170",
+        "qty": 0,
+        "amount": 0
       }
     ]
   },
@@ -39,27 +49,37 @@
       {
         "id":0,
         "name":"Chicken Biryani",
-        "price":"240"
+        "price":"240",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":1,
         "name":"King Prwan Biryani",
-        "price":"165"
+        "price":"165",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":2,
         "name":"Prwan Biryani",
-        "price":"195"
+        "price":"195",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":3,
         "name":"Mushroom Biryani",
-        "price":"255"
+        "price":"255",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":4,
         "name":"Vegetable Biryani",
-        "price":"150"
+        "price":"150",
+        "qty": 0,
+        "amount": 0
       }
     ]
   },
@@ -71,27 +91,163 @@
       {
         "id":0,
         "name":"Chapati",
-        "price":"7"
+        "price":"7",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":1,
         "name":"Paratha",
-        "price":"60"
+        "price":"60",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":2,
         "name":"Stuffed Paratha",
-        "price":"80"
+        "price":"80",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":3,
         "name":"Kulcha Nan",
-        "price":"55"
+        "price":"55",
+        "qty": 0,
+        "amount": 0
       },
       {
         "id":4,
         "name":"Garlic Nan",
-        "price":"70"
+        "price":"70",
+        "qty": 0,
+        "amount": 0
+      }
+    ]
+  },
+  {
+    "id":3,
+    "name":"South Indian Dishes",
+    "image":"https://i.pinimg.com/originals/ce/cb/01/cecb013d9e66f27b2e6180b063697b59.jpg",
+    "items":[
+      {
+        "id":0,
+        "name":"Sambhar Idlli",
+        "price":"60",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":1,
+        "name":"Sambhar Vada",
+        "price":"60",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":2,
+        "name":"Dal Vada",
+        "price":"80",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":3,
+        "name":"Fry Idlli",
+        "price":"65",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":4,
+        "name":"Garlic Panner",
+        "price":"85",
+        "qty": 0,
+        "amount": 0
+      }
+    ]
+  },
+  {
+    "id":4,
+    "name":"Daily Special",
+    "image":"https://st.depositphotos.com/1005682/3014/i/450/depositphotos_30145467-stock-photo-mutton-korma-famous-food-with.jpg",
+    "items":[
+      {
+        "id":0,
+        "name":"Dabba Goshi",
+        "price":"170",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":1,
+        "name":"Chiken Angara",
+        "price":"160",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":2,
+        "name":"Dal Gosti",
+        "price":"95",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":3,
+        "name":"Gurda Kaleji",
+        "price":"120",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":4,
+        "name":"Mutton To Piyaza",
+        "price":"155",
+        "qty": 0,
+        "amount": 0
+      }
+    ]
+  },
+  {
+    "id":5,
+    "name":"Fruit Salad",
+    "image":"https://www.cookwithmanali.com/wp-content/uploads/2019/06/Fruit-Custard-500x500.jpg",
+    "items":[
+      {
+        "id":0,
+        "name":"Fruit Salad",
+        "price":"95",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":1,
+        "name":"Fruit Salad With Ice-Cream",
+        "price":"135",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":2,
+        "name":"Jelly",
+        "price":"80",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":3,
+        "name":"Jelly With Ice-Cream",
+        "price":"125",
+        "qty": 0,
+        "amount": 0
+      },
+      {
+        "id":4,
+        "name":"Fruit Salad With Jelly",
+        "price":"150",
+        "qty": 0,
+        "amount": 0
       }
     ]
   }

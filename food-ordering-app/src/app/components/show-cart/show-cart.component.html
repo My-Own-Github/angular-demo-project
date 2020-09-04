@@ -1,3 +1,46 @@
-<p>
-  show-cart works!
-</p>
+<app-nav-bar></app-nav-bar>
+<div class="container mt-3 card">
+  <table class="table table-bordered mt-2">
+    <thead class="text-center">
+      <tr>
+        <th scope="col">Items</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Prize</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let cartItem of cartItemsList">
+        <th scope="row">{{cartItem.name}}</th>
+        <td>{{cartItem.qty}}</td>
+        <td>{{cartItem.amount}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row mr-3 text-right">
+    <div class="col-3 offset-7">
+      <div>
+        <h6>Amount To Pay: </h6>
+      </div>
+      <div>
+        <h6>Delivery Charge: </h6>
+      </div>
+      <div>
+        <h5>Total Amount: </h5>
+      </div>
+    </div>
+    <div class="col-1">
+      <div>
+        <h6>{{payAmount}}</h6>
+      </div>
+      <div>
+        <h6>{{10}}</h6>
+      </div>
+      <div>
+        <h5>{{total}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="text-right mt-3 mb-3">
+    <button class="btn btn-success mr-2" (click)="goToLogin()"> CHECKOUT</button>
+  </div>
+</div>

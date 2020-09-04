@@ -2,11 +2,8 @@
 
 let express = require('express');
 let bodyParser = require('body-parser');
-const bcrypt = require('bcryptjs');
 let cors = require('cors');
 let rtsIndex = require('./routes/index.router');
-
-
 
 let app = express();
 

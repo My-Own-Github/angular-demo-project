@@ -1,3 +1,28 @@
-<p>
-  user-login works!
-</p>
+<div class="container mt-3 pt-5">
+  <div class="card text-center" style="width: 18rem;">
+    <div class="card-header text-white bg-secondary p-1">
+      <h2>Login User</h2>
+    </div>
+    <div class="card-body pb-1">
+      <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && onSubmit(loginForm)" class="pt-2 pb-2">
+        <div>
+          <input type="text" #userName="ngModel" [(ngModel)]="fetchData.user.userName" name="userName"
+            placeholder="Enter UserName" required>
+        </div>
+        <br />
+        <div>
+          <input type="password" #password="ngModel" [(ngModel)]="fetchData.user.password" name="password"
+            placeholder="Enter Password" required>
+        </div>
+        <br />
+        <div>
+          <button type="submit" class="btn btn-success btn-lg" [disabled]="!loginForm.valid"> Login </button>
+        </div>
+      </form>
+      <hr class="w-75 mx-auto" *ngIf="isSuccessMsg">
+      <p class="text-center text-success font-weight-bold" *ngIf="isSuccessMsg">Successfully Login</p>
+      <hr class="w-75 mx-auto" *ngIf="isServerError">
+      <p class="text-center text-danger font-weight-bold" *ngIf="isServerError">{{serverSideMessages}}!</p>
+    </div>
+  </div>
+</div>

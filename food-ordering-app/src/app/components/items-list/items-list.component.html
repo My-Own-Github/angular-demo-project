@@ -1,3 +1,43 @@
-<p>
-  items-list works!
-</p>
+<app-nav-bar></app-nav-bar>
+<div class="container mt-2">
+  <div class="card">
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead class="text-center">
+          <tr>
+            <th scope="col">Item Name</th>
+            <th scope="col">Item Count</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of catgItemsList" class="align-items-center justify-content-center">
+            <th scope="row" class="text-center">{{item.name}}</th>
+            <td>
+              <div class="row">
+                <button class="btn btn-danger btn-sm text-white col-2 offset-3" type="button" id="button-addon1"
+                  (click)="removedItem(item)">
+                  <h5>-</h5>
+                </button>
+                <input type="text" readOnly value={{item.qty}} class="form-control text-center col-2 pb-2"
+                  aria-label="Example text with button addon" aria-describedby="button-addon1" disabled />
+                <button class="btn btn-success btn-sm text-white col-2" type="button" id="button-addon2"
+                  (click)="addItem(item)">
+                  <h5>+</h5>
+                </button>
+              </div>
+            </td>
+            <td class="text-center">{{item?.price}}</td>
+            <td class="text-center">{{item?.amount}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-right">
+        <p class="text-danger text-center" *ngIf='isError'>Please Select Item Menu!</p>
+        <button class="btn btn-primary mr-2" (click)="processToCartItem()">ADD TO CART</button>
+        <button class="btn btn-secondary" (click)="goBack()">CANCEL</button>
+      </div>
+    </div>
+  </div>
+</div>

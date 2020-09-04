@@ -1,0 +1,8 @@
+<app-nav-bar></app-nav-bar>
+<div class="container mt-3">
+  <div class="text-center mt-3 pb-3" *ngIf="showCartButton">
+    <button class="btn btn-warning btn-lg" (click)="goToCartPage()"> SHOW CART </button>
+  </div>
+  <app-categories-lists></app-categories-lists>
+</div>
+<router-outlet></router-outlet>
