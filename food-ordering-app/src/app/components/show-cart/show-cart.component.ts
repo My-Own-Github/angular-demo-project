@@ -49,7 +49,7 @@ export class ShowCartComponent implements OnInit {
    * @memberof ShowCartComponent
    */
   goToLogin() {
-    this.cartItemService.setCartItems([]);
+    this.cartItemService.setCartItems([], true);
     this.router.navigate(['login'])
   }
 

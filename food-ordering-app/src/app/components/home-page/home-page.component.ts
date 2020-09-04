@@ -37,8 +37,8 @@ export class HomePageComponent implements OnInit {
    * @memberof HomePageComponent
    */
   ngOnInit() {
-    // this.cartItems = history.state.data;
-    this.cartItems = this.cartItemService.getCartItems()
+    this.cartItems = history.state.data;
+    // this.cartItems = this.cartItemService.getCartItems()
     if (this.cartItems) {
       this.showCartButton = true;
     }

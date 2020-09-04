@@ -88,8 +88,8 @@ export class ItemsListComponent implements OnInit {
    */
   processToCartItem() {
     let cartItems:Array<any> = this.cartItemService.getCartItems()
-    if (cartItems.length > 0) {
-      this.router.navigate(['/homePage'], { state: { "data": this.cartItems } })
+    if (cartItems && cartItems.length > 0) {
+      this.router.navigate(['/homePage'], { state: { "data": cartItems } })
     } else {
       this.isError = true;
       setTimeout(() => this.isError = false, 2000);

@@ -8,16 +8,18 @@ export class CartItemService {
 
   constructor() { }
 
-  getCartItems():Array<any> {
+  getCartItems(): Array<any> {
     return this.cartItems;
   }
 
-  setCartItems(item: any) {
-    if(!this.cartItems)
+  setCartItems(item: any, opt?: boolean) {
+    if (!this.cartItems)
       this.cartItems = new Array();
-    if (this.cartItems.length === 0) {
+    if (Array.isArray(item) && item.length === 0 && opt)
+      this.cartItems = item;
+    if (this.cartItems && this.cartItems.length === 0 && !opt) {
       this.cartItems.push(item);
-    } else {
+    } else if (this.cartItems && this.cartItems.length > 0 && !opt) {
       let indx: any = this.cartItems.indexOf(item);
       if (indx === -1) {
         this.cartItems.push(item);
