@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataMaintentService {
   categoryLists: Array<any>;
+  currentItemData: Array<any>;
 
   constructor() { }
 
@@ -21,6 +22,7 @@ export class DataMaintentService {
    */
   setCategoryList(catgLst) {
     this.categoryLists = catgLst;
+    sessionStorage.setItem("categoryList", JSON.stringify(this.categoryLists))
   }
 
   /**
@@ -30,6 +32,20 @@ export class DataMaintentService {
    * @memberof DataMaintentService
    */
   getCategoryList() {
-    return this.categoryLists;
+    if(this.categoryLists){
+      return this.categoryLists;
+    } else {
+      this.categoryLists = JSON.parse(sessionStorage.getItem('categoryList'));
+      return this.categoryLists;
+    }
+  }
+
+  setCurrentCartItemData(itemArray, catgData){
+    // let index: any = this.categoryLists.indexOf(catgData.id);
+    this.categoryLists[catgData.id].items = itemArray;
+    sessionStorage.setItem("categoryList", JSON.stringify(this.categoryLists))
+  }
+  getCurrentCartItemData(){
+    return this.currentItemData;
   }
 }

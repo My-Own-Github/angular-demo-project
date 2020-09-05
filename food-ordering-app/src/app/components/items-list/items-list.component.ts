@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { CartItemService } from 'src/app/service/cart-item.service';
+import { DataMaintentService } from 'src/app/service/data-maintent.service';
 /**
  *
  *
@@ -36,7 +37,11 @@ export class ItemsListComponent implements OnInit {
    * @param {Router} router
    * @memberof ItemsListComponent
    */
-  constructor(private _location: Location, private router: Router, private cartItemService: CartItemService) { }
+  constructor(private _location: Location,
+              private router: Router,
+              private cartItemService: CartItemService,
+              private dataService : DataMaintentService
+  ) { }
   /**
    *
    *
@@ -44,8 +49,12 @@ export class ItemsListComponent implements OnInit {
    */
   ngOnInit() {
     this.categoryData = history.state.data;
-    if (this.categoryData.items) {
+    if (this.categoryData && this.categoryData.items) {
+      sessionStorage.setItem("CatgId", JSON.stringify(this.categoryData.id))
       this.catgItemsList = this.categoryData.items;
+    } else {
+      let id = JSON.parse(sessionStorage.getItem('CatgId'));
+      this.catgItemsList = this.dataService.getCategoryList()[id].items;
     }
   }
   /**
@@ -59,6 +68,7 @@ export class ItemsListComponent implements OnInit {
     this.counter = this.catgItemsList[index].qty
     this.catgItemsList[index].qty = this.counter + 1;
     this.catgItemsList[index].amount = parseInt(this.catgItemsList[index].price) * (this.counter + 1);
+    this.dataService.setCurrentCartItemData(this.catgItemsList, this.categoryData)
     this.cartItemService.setCartItems(item)
   }
   /**
@@ -73,6 +83,7 @@ export class ItemsListComponent implements OnInit {
     if (this.counter > 0) {
       this.catgItemsList[index].qty = this.counter - 1;
       this.catgItemsList[index].amount = parseInt(this.catgItemsList[index].price) * (this.counter - 1);
+      this.dataService.setCurrentCartItemData(this.catgItemsList, this.categoryData)
       this.cartItemService.setCartItems(item)
     } else {
       let indx: any = this.cartItems.indexOf(item);

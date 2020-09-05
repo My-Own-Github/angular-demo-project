@@ -37,10 +37,13 @@ export class ShowCartComponent implements OnInit {
    */
   ngOnInit() {
     this.cartItemsList = history.state.data;
-    this.cartItemsList.forEach(item => {
-      this.payAmount = this.payAmount + item.amount;
-    })
-    this.total = this.payAmount + 10;
+    if(this.cartItemsList){
+      this.ItemsCalculation(this.cartItemsList)
+    } else {
+      this.cartItemsList = JSON.parse(sessionStorage.getItem('cartItems'));
+      this.ItemsCalculation(this.cartItemsList)
+    }
+
   }
 
   /**
@@ -50,7 +53,22 @@ export class ShowCartComponent implements OnInit {
    */
   goToLogin() {
     this.cartItemService.setCartItems([], true);
+    sessionStorage.clear();
     this.router.navigate(['login'])
+  }
+
+
+/**
+ *
+ *
+ * @param {Array<any>} cartLsts
+ * @memberof ShowCartComponent
+ */
+ItemsCalculation(cartLsts: Array<any>){
+    cartLsts.forEach(item => {
+      this.payAmount = this.payAmount + item.amount;
+    })
+    this.total = this.payAmount + 10;
   }
 
 }

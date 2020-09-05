@@ -1,17 +1,45 @@
 import { Injectable } from '@angular/core';
-
+/**
+ *
+ *
+ * @export
+ * @class CartItemService
+ */
 @Injectable({
   providedIn: 'root'
 })
+
 export class CartItemService {
+  /**
+   *
+   *
+   * @type {Array<any>}
+   * @memberof CartItemService
+   */
   cartItems: Array<any>;
 
   constructor() { }
-
+  /**
+   *
+   *
+   * @returns {Array<any>}
+   * @memberof CartItemService
+   */
   getCartItems(): Array<any> {
-    return this.cartItems;
+    if (this.cartItems) {
+      return this.cartItems;
+    } else {
+      this.cartItems = JSON.parse(sessionStorage.getItem('cartItems'));
+      return this.cartItems;
+    }
   }
-
+  /**
+   *
+   *
+   * @param {*} item
+   * @param {boolean} [opt]
+   * @memberof CartItemService
+   */
   setCartItems(item: any, opt?: boolean) {
     if (!this.cartItems)
       this.cartItems = new Array();
@@ -27,8 +55,6 @@ export class CartItemService {
         this.cartItems[indx] = item;
       }
     }
-  }
-
-  addItem(item: any) {
+    sessionStorage.setItem("cartItems", JSON.stringify(this.cartItems))
   }
 }
