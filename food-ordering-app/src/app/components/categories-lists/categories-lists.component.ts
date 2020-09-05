@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchDataService } from 'src/app/service/fetch-data.service';
 import { Router } from '@angular/router';
+import { DataMaintentService } from 'src/app/service/data-maintent.service';
 /**
  *
  *
@@ -22,7 +23,10 @@ export class CategoriesListsComponent implements OnInit {
    * @memberof CategoriesListsComponent
    */
   categoriesList: Array<object>;
-  constructor(private fetchData: FetchDataService, private router: Router) { }
+  constructor(private fetchData: FetchDataService,
+              private router: Router,
+              private dataService: DataMaintentService
+  ) { }
 
   /**
    *
@@ -30,9 +34,15 @@ export class CategoriesListsComponent implements OnInit {
    * @memberof CategoriesListsComponent
    */
   ngOnInit() {
-    this.fetchData.getAllCategories().subscribe((catgLst: any) => {
-      this.categoriesList = catgLst;
-    })
+    let categoriesList = this.dataService.getCategoryList();
+    if(!categoriesList){
+      this.fetchData.getAllCategories().subscribe((catgLst: any) => {
+        this.dataService.setCategoryList(catgLst.lst);
+        this.categoriesList = this.dataService.getCategoryList();
+      })
+    } else{
+      this.categoriesList = this.dataService.getCategoryList();
+    }
   }
 
   /**

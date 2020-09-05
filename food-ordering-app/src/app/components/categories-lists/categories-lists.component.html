@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-columns">
-    <div class="card ma4 bg-light-yellow dib pa grow tc" style="cursor: pointer;" *ngFor="let catLst of categoriesList?.lst" (click)="goToCategDetailPage(catLst)">
+    <div class="card ma4 bg-light-yellow dib pa grow tc" style="cursor: pointer;" *ngFor="let catLst of categoriesList" (click)="goToCategDetailPage(catLst)">
       <img class="card-img-top" style="height: 60%;" [src]="catLst.image" alt="Card image cap">
       <div class="card-body pb-0 text-center">
         <h5 class="card-title">{{catLst.name}}</h5>

@@ -13,6 +13,7 @@ import { UserAuthGuard } from './user-auth.guard';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
 import { CartItemService } from './service/cart-item.service';
+import { DataMaintentService } from './service/data-maintent.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,12 @@ import { CartItemService } from './service/cart-item.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [CheckUserAuthService, UserAuthGuard, CartItemService],
+  providers: [
+    CheckUserAuthService,
+    UserAuthGuard,
+    CartItemService,
+    DataMaintentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
